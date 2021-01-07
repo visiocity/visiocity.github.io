@@ -188,6 +188,11 @@ height: 4em;
 
 .resize{
   max-width: 100%;
-  min-width: 300px;
+  /* min-width: 300px; */
   height: auto;
+}
+
+.quartercolumn {
+  float: center;
+  width: 25%;
 }
