@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" name="viewport">
+    <meta name="description" content="Visiocity">
+    <meta name="keywords" content="Visiocity, video summarization, benchmark, data search, data stories">
+    <meta name="author" content="Anshul Tomar">
+
+    <title>Visiocity</title>
+
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script>
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+    </script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+
+    FROM CSS img.featurette-image {
+      border-radius: 3px;
+      border: solid 1px #bbb;
+    }
+  -->
+  </head>
+
+  <body width="device-width">
+
+
+<nav style="font-size:1.3em;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+   <a class="navbar-brand" href="#"></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+     <div class="navbar-nav">
+       <a class="nav-item nav-link active" href="#over">Overview</a>
+       <a class="nav-item nav-link active" href="#ann">Annotation</a>
+       <a class="nav-item nav-link active" href="#sum">Summaries</a>
+       <a class="nav-item nav-link active" href="#train">Training</a>
+       <a class="nav-item nav-link active" href="#down">Download</a>
+       <a class="nav-item nav-link active" href="#refer">Reference</a>
+
+   </div>
+  </div>
+</nav>
+
+    <div class="container-fluid p-0 m-0">
+    <div class="header visiocityheader" ></div>
+    </div>
+
+    <div class="container">
+        <div class="header-text"> <br> <br>
+          <h1 class="page-title center-container">Visiocity</h1>
+        </div>
+          <p class="lead center-container">A new benchmarking dataset for Video Summarization</p>
+    </div>
+
+
+    <div id="over" class="container">
+      <h2 class="page-header">Overview</h2>
+      <p>We introduce VISIOCITY, a new challenging benchmark dataset
+      for video summarization. VISIOCITY stands for Video Summarization based on Continuity, Intent and Diversity. VISIOCITY is a large challenging dataset, which is an order of magnitude larger (both in terms of total number of hours as well as
+      the duration of each video) compared to existing datasets for video
+      summarization.</p> VISIOCITY is a diverse collection of 67 videos spanning across six
+      different categories: TV shows (Friends) , sports (Soccer), surveillance, education (Tech-Talks), birthday videos and wedding videos. VISIOCITY
+      is compared to existing datasets in Table 2 and Summary statistics
+      for VISIOCITY are presented in Table 1.
+         <br> <br>
+      <div class="row">
+        <div class="lefthalfcolumn img-with-text resize"><img src="assets/summary.png" alt="this slowpoke moves"  width=370/><p class="center-container"><b>Table 1 : Summary of Visiocity</b></p></div>
+        <div class="righthalfcolumn img-with-text resize"><img src="assets/comparison.png" alt="this slowpoke moves"  width=700/><p class="center-container"><b>Table 2 : Comparison with other datasets</b></p></div>
+      </div>
+      <div class="row">
+
+      </div>
+
+   </div>
+<div id="ann" class="container">
+  <h2 class="page-header">Annotation</h2>
+  <h5> Annotation Protocol</h5>
+ <p>The annotations are in the form of concepts marked for each shot of a video as against asking annotators to prepare actual summaries. A group of 13 professional annotators were tasked to annotate videos (without listening to the audio) by marking all applicable keywords on a shot through a GUI tool developed by us for this task
+   as shown in Figure 1.The tool makes the annotation process easy and reduces chances of errors.Special caution was exercised to ensure high quality annotations
+   . Specifically, the guidelines and protocols were made as objective as possible, the annotators were trained through sample annotation tasks, and the annotation
+    round was followed by two verification rounds where both precision (how accurate the annotations were) and recall (whether all events of interest and continuity information 
+    has been captured in the annotations) were verified by another set of annotators. Whatever inconsistencies or inaccuracies were found and could be 
+   automatically detected, were included in our automatic sanity checks which were run on all annotations. 
+ </p>
+ <div class="img-with-text"><img class="center-container resize" src="assets/tool_masked.png" alt="Annotator tool"  width=700/><p class="center-container"><b>Figure 1 : Annotator tool</b></p></div>
+
+ <h5> Keywords and Rating</h5>
+ Below is an example of the keywords and ratings for the soccer domain. The ratings are chosen based on a heuristic.
+ <div class="code">
+   <pre>
+     <code>
+      {
+        "mega_events": ["Outside", "Goal", "Miss", "Pole", "Save", "Foul", "Injured", "Penalty Goal", "Penalty Save", "Penalty Miss", "Free Kick", "Corner", "Player Substitution", "Free Kick Goal", "Free Kick Save", "Free Kick Miss", "Corner Goal", "Corner Save", "Corner Miss"],
+        "mega_events_ratings": [4, 10, 8, 8, 8, 4, 6, 10, 10, 10, 4, 4, 4, 10, 8, 8, 10, 8, 8],
+        "snippet_size": 5,
+        "categories": {
+          "Entity": {
+            "keywords_desc": "Goalkeeper\nOpposition (somebody of the different jersey than player and doing something significant with the ball)\nTeammate (somebody of the same jersey as player)\nReferee\nPlayer (one who has the ball or the guy in closeup. Can be from different team in different snippets)\nStats (Some text displayed on screen while match is being shown)",
+            "keywords": ["Goalkeeper", "Player", "Teammate", "Opposition", "Referee", "Stats"],
+            "ratings": [4, 1, 1, 1, 4, 1],
+            "category_desc": "Who all are the main people/thing being shown in this snippet.\nDo not select any if no one significant.\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+          },
+          "Action": {
+            "keywords_desc": "Shoot (attempt to goal)\nDribble (carrying the ball or dodging for reasonable amount of time and space)\nPass (Player kicking the ball to teammate)\nClear (kicking the ball somewhere else inside the field)\nSteal (opposition snatching the ball from the player)\nGoalkeeperKickThrow (Goalkeeper kicking or throwing the ball)",
+            "keywords": ["Shoot", "Dribble", "Steal", "Pass", "Clear", "GoalkeeperKickThrow"],
+            "ratings": [8, 1, 2, 1, 1, 3],
+            "category_desc": "What is being done with the ball in THIS snippet?\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+          },
+          "Outcome": {
+            "keywords_desc": "In Field (ball is somewhere in the field)\nGoal (ball went into the goal)\nRed Card (referee showing the red card)\nPole (ball hit the pole - it may be a goal or a miss - select them separately as applicable)\nOutside (ball went out of the field markings)\nPlayer Fell (this snippet shows a prayer falling and gettnig up quickly)\nOff Side (Ball is passed to a player who is behind the farthest defender of the opposition)\nYellow card (referee showing the yellow card)\nFoul (something happened because of which match seems to pause and then resume)\nMiss (ball missed the goal)\nInjured (Somebody got injured, match pauses and resumes)\nSave (goalkeeper successfully saved a goal attempt)",
+            "keywords": ["Outside", "Goal", "Miss", "Pole", "Save", "Foul", "Yellow Card", "Red Card", "Injured", "Off Side", "In Field", "Player Fell"],
+            "ratings": [4, 10, 8, 8, 10, 5, 4, 8, 7, 10, 1, 2],
+            "category_desc": "What actually happened with the ball as a result of 'Action'.\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+          },
+          "Event": {
+            "keywords_desc": "Throw (Throwing in ball from outside the edges of the field)\nKick off (Starting of the match from half line)\nCorner (A kick from any vertex corner of the field)\nCelebration (Players going crazy after a goal)\nFree Kick (A free chance to kick without anybody trying to steal the ball from the referee decided position of the ball)\nPenalty (Player, goal keeper and direct shoot by the player)\nHalf time (45:00 minute)\nPlayer Substitution (If this snippet shows the substitution board being flashed)",
+            "keywords": ["Penalty", "Free Kick", "Corner", "Throw", "Kick Off", "Half Time", "Celebration", "Player Substitution"],
+            "ratings": [10, 4, 5, 1, 8, 8, 6, 5],
+            "category_desc": "Typically a consequence of the 'outcome'.\nIt is a major checkpoint from match perspective.\nSnippets that show the beginning/resume of the game or celebration will typically have this.\nTo be used only when the snippet is showing the match in action.\nCan be atmost 1 per snippet."
+          },
+          "Position": {
+            "keywords_desc": "Mid Field (All areas except the D area and Half line can be termed as Midfield)\nD Area (if the ball is anywhere behind the D-Line towards the goal post)\nHalf line (if the ball is somewhere around the line in the middle of the field)",
+            "keywords": ["Mid Field", "D Area", "Half Line"],
+            "ratings": [1, 2, 1],
+            "category_desc": "In this snippet, where is the ball shown with respect to the field?\nIf the ball is going from one area to another in the same snippet, tick more than one.\nTo be used only when the snippet is showing the match in action."
+          },
+          "Camera Angle": {
+            "keywords_desc": "Close up (showing closeup of a something or someone)\nLow Angle (as if somebody on the ground is taking the video)\nHigh angle (like view from drone/crane mounted cameras - mostly all views are this)",
+            "keywords": ["Close Up", "High Angle", "Low Angle"],
+            "ratings": [2, 1, 1],
+            "category_desc": "Applicable to both in match snippet or other snippet.\nIf more than one in the same snippet, select all applicable."
+          },
+          "Other Scenes": {
+            "keywords_desc": "Player/Match Statistics (screen showing info, numbers and stats)\nHighlight/Replay (replay/highlight being shown)\nVideo Assistant Referee (like a screen showing replay or something for tougher decisions)\nPost Match Celebration\nTeam room (player discussions)\nSpectators (scene of the audience or cheerleaders)\nOther Background (like sky, landscape, city view, animation, advertisement etc.)\nPost Match celebration (if the snippet shows celebration after the match is over)\nPre Match Event (something happening on field before the match has begun)\nTeam walk in (team entering the ground)",
+            "keywords": ["Statistics", "Team Walk In", "Team Room", "Player/Match Statistics", "Spectators", "Highlight/Replay", "Other Background", "Post Match Celebration", "Video Assistant Referee", "Pre Match Event"],
+            "ratings": [2, 2, 2, 2, 2, 0, 0, 2, 2, 1],
+            "category_desc": "The snippet shows something other than the match action on field.\nWhen this is selected, entity, action, outcome, event and position must be blanks."
+          }
+        }
+      }
+     </code>
+   </pre>
+  </div>
+</div>
+<div id="sum" class="container">
+  <h2 class="page-header">Reference Summaries</h2>
+  <h4>Videos</h4>
+  A few example videos from each domain are given below.
+  <div class="center-container row" >
+    <div class="column img-with-text resize"><img src="./assets/friends.gif" alt="Friends domain"  width:100%/></div>
+    <div class="column img-with-text resize"><img src="./assets/techtalk.gif" alt="Techtalk Domain"  width:100%/></div>
+    <div class="column img-with-text resize"><img src="./assets/soccer.gif" alt="Soccer domain"  width:100%/></div>
+  </div>
+  <div class="center-container row" >
+   <div class="column img-with-text resize"><img src="./assets/surveillance.gif" alt="Surveillance Domain"  width:100%/></div>
+   <div class="column img-with-text resize"><img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width:100%/></div>
+   <div class="column img-with-text resize"><img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width:100%/></div>
+ </div>
+ <div class="center-container">Clockwise from the top left : Friends, Techtalk, Soccer, Surveillance, Birthday, Wedding</div>
+
+ <!-- <div class="center-container row" >
+  <div class="column img-with-text resize"><img src="./assets/friends.gif" alt="Friends domain"  width:100%/><p class="center-container">Friends</p></div>
+  <div class="column img-with-text resize"><img src="./assets/techtalk.gif" alt="Techtalk Domain"  width:100%/><p class="center-container">Techtalk</p></div>
+  <div class="column img-with-text resize"><img src="./assets/soccer.gif" alt="Soccer domain"  width:100%/><p class="center-container">Soccer</p></div>
+</div>
+<div class="center-container row" >
+ <div class="column img-with-text resize"><img src="./assets/surveillance.gif" alt="Surveillance Domain"  width:100%/><p class="center-container">Surveillance</p></div>
+ <div class="column img-with-text resize"><img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width:100%/><p class="center-container">Birthday</p></div>
+ <div class="column img-with-text resize"><img src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves"  width:100%/><p class="center-container">Wedding</p></div>
+</div> -->
+<br>
+<br>
+<h4>Comparing human summaries with automatic summaries</h4> 
+<div class="center-container row" >
+  <div class="img-with-text leftcolumn resize"><img src="./assets/wedding_comparison.png" alt="Comparison for wedding"  width:100%/><p class="center-container">Comparing summaries for Wedding Domain qualitatively</p></div>
+  <div class="img-with-text rightcolumn resize"><img src="./assets/soccer_comparison.png" alt="Comparison for wedding"  width:100%/><p class="center-container">Comparing summaries for Soccer Domain qualitatively</p></div>
+</div>
+<div class="center-container row" >
+  <div class="img-with-text leftcolumn resize"><img src="./assets/Behavior of measures across different summaries of Wedding.png" alt="Comparison for wedding"  width:100%/><p class="center-container">Comparing summaries for Wedding Domain quantitatively</p></div>
+  <div class="img-with-text rightcolumn resize"><img src="./assets/Behavior of measures for different summaries of Soccer.png" alt="Comparison for wedding"  width:100%/><p class="center-container">Comparing summaries for Soccer Domain quantitatively</p></div>
+</div>
+</div>
+<div id="train" class="container">
+  <h2 class="page-header">Training</h2>
+  $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+</div>
+<div id="down" class="container">
+  <h2 class="page-header">Download</h2>
+  <div class="row top-buffer">
+
+    <div class="col-8">
+      <h4>Annotations</h4>
+      This file contains the annotations for the videos of the various domains.
+    </div>
+
+    <div class="col-4">
+        <button class="btn btn-secondary" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false">
+            <a href="www.google.com">Download</a>
+        </button>
+    </div>    
+  </div>
+  <div class="row top-buffer">
+
+    <div class="col-8">
+      <h4>Videos</h4>
+      Videos for all the domains are present here. 
+    </div>
+
+    <div class="col-4">
+        <button class="btn btn-secondary" type="button" id="dropdownMenu2" aria-haspopup="true" aria-expanded="false">
+            <a href="https://drive.google.com/drive/u/0/folders/15BL9Q-nbYIr-Wc80Tu_OR33it1Gg6zQ3">Download</a>
+        </button>
+    </div>    
+  </div>
+</div>
+<div id="refer" class="container">
+  <h2 class="page-header">Results</h2>
+  <div class="img-with-text"><img src="./assets/results.png"/><p class="center-container">Results using mixture model on VISIOCITY</p></div>
+</div>
+<div id="refer" class="container">
+  <h2 class="page-header">Reference</h2>
+  If you use VISIOCITY or refer to it, pls cite the following paper:
+  <div class="code">
+    <pre>
+      <code>
+        @inproceedings{
+          kaushal2020realistic, 
+          title={Realistic Video Summarization through VISIOCITY: A New Benchmark and Evaluation Framework}, 
+          author={Kaushal, Vishal and Kothawade, Suraj and Iyer, Rishabh and Ramakrishnan, Ganesh}, 
+          booktitle={Proceedings of the 2nd International Workshop on AI for Smart TV Content Production, Access and Delivery}, 
+          pages={37--44}, 
+          year={2020}
+        }
+      </code>
+    </pre>
+  </div>
+</div>
+<br>
+<br>
+<br>
+    <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7" >
+          <p class="text-muted">Anshul Tomar, 2020</p>
+        </div>
+        <div class="col-md-5" id="logos">
+
+        </div>
+      </div>
+    </div>
+    </footer>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+  <!--  <script src="js/collapse.js"></script>
+        <script language="javascript">
+            $(document).ready(function() {
+            $(".comment").shorten();
+            $(".comment-small").shorten({showChars: 10});
+            });
+        </script>-->
+</body>
+</html>

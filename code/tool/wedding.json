@@ -1,0 +1,44 @@
+{
+	"mega_events": ["bride-farewell", "bride-entry", "groom-entry", "give-receive-gift", "cake-cutting", "cake-feeding", "ritual", "giving-wedding-ring", "giving-necklace", "exchanging-garlands", "fire-circumambulation", "lifting-groom-bride", "propose", "applying-vermillion", "marriage-registration"],
+	"mega_events_ratings": [10, 10, 10, 6, 10, 6, 8, 10, 10, 10, 10, 10, 10, 10, 10],
+	"snippet_size": 5,
+	"categories": {
+		"NumPeople": {
+			"keywords_desc": "0 (When no person or only partial persons, that is no face and less than 50% visible)",
+			"keywords": ["0", "1", "2", "3-5", ">5"],
+			"ratings": [1, 1, 1, 1, 1],
+			"category_desc": "Max number of people seen in this shot at any point in time\nCount only if either face or more than 50% of person is visible"
+		},
+		"Actors": {
+			"keywords_desc": "guest (one who is not involved in any rituals as such)\nrelative (one who is involved in some ritual)\ncustomary-wedding-gifts (jewellery etc. kind of gifts that one family gives to the other)\nhawan-kund (can be with or without fire)",
+			"keywords": ["bride", "groom", "bride-and-groom", "guests", "relative", "waiter", "anchor", "priest/father", "food-stall-person", "wedding-banner", "other-banner", "camera-man", "cake", "decoration/gifts", "horse", "guests-in-procession", "bride-groom-vehicle", "food", "puja-item", "customary-wedding-gifts", "hawan-kund", "candle", "bride-groom-special-chair", "bride/groom dress", "musician", "other", "title-animation"],
+			"ratings": [2, 2, 2, 1, 2, 1, 2, 4, 1, 6, 1, 1, 4, 4, 7, 5, 7, 1, 3, 6, 7, 6, 5, 4, 2, 1, 9],
+			"category_desc": "Who all are visible in this shot?\nFor living beings, mark whoever are visible\nFor non living beings, mark only if the object is in closeup and in focus)"
+		},
+		"Event": {
+			"keywords_desc": "dressing-up (includes make-up)\nguests-entry (welcoming/entry of guests)\ngive-receive-gift (giving/receiving of gifts/bouquet)\ngreeting(Gestures while welcoming or meeting each other.\nIncludes shake hand, touch feet, bow down etc.)\nair-show(includes releasing balloons in air or bursting fire crackers)\napplying-vermillion (sindoor)",
+			"keywords": ["bride-farewell", "dressing-up", "procession", "selfie", "groupphotopose", "individualpose", "guests-entry", "bride-entry", "groom-entry", "give-receive-gift", "hugging", "kissing", "greeting", "cake-cutting", "blowing-candle", "eating-drinking", "clapping", "cake-feeding", "ritual", "sleeping", "giving-wedding-ring", "giving-necklace", "exchanging-garlands", "waiting-for-food", "dance", "bride-dancing", "groom-dancing", "couple-dancing", "fire-circumambulation", "lifting-groom-bride", "propose", "applying-vermillion", "air-show", "marriage-registration", "reception", "cooking", "other"],
+			"ratings": [10, 8, 4, 2, 3, 2, 2, 9, 9, 6, 5, 8, 1, 10, 9, 2, 3, 5, 4, 7, 10, 10, 10, 2, 5, 8, 8, 10, 10, 10, 10, 10, 8, 10, 2, 3, 1],
+			"category_desc": "What is the main thing happening in the scene?\nTypically action in the center or in the foreground\nLeave blank if none of this is applicable or if implicit from some other keyword"
+		},
+		"Location": {
+			"keywords_desc": "banquet-hall(includes party hall, pub, discotheque etc.)",
+			"keywords": ["banquet-hall", "dining-area", "outdoor", "stage", "room", "temple/church", "wedding-ground", "mandap", "parlour", "other"],
+			"ratings": [1, 1, 1, 2, 1, 1, 1, 2, 2, 1],
+			"category_desc": "Location of this shot\nDo not select if it is not clear"
+		},
+
+		"SceneType": {
+			"keywords_desc": "animation-graphics(animation added by the video editor)\nstill-photo(inserted in the video by the video editor)\nblank-fade(when screen fades or blacks out upon change of scene)",
+			"keywords": ["animation-graphics", "still-photo", "blank-fade"],
+			"ratings": [2, 6, 0],
+			"category_desc": "What kindo f scene is this?\nRegular wedding scene is by default."
+		},
+		"CameraAngle": {
+			"keywords_desc": "closeup(when the thing/person being show is quite large relative to the entire frame)\nwide-angle(every other shot)",
+			"keywords": ["closeup", "wide-angle"],
+			"ratings": [1, 1],
+			"category_desc": "What kindo f scene is this?\nRegular birthday scene is by default."
+		}
+	}
+}

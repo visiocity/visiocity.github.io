@@ -1,0 +1,49 @@
+{
+	"mega_events": ["Outside", "Goal", "Miss", "Pole", "Save", "Foul", "Injured", "Penalty Goal", "Penalty Save", "Penalty Miss", "Free Kick", "Corner", "Player Substitution", "Free Kick Goal", "Free Kick Save", "Free Kick Miss", "Corner Goal", "Corner Save", "Corner Miss"],
+	"mega_events_ratings": [4, 10, 8, 8, 8, 4, 6, 10, 10, 10, 4, 4, 4, 10, 8, 8, 10, 8, 8],
+	"snippet_size": 5,
+	"categories": {
+		"Entity": {
+			"keywords_desc": "Goalkeeper\nOpposition (somebody of the different jersey than player and doing something significant with the ball)\nTeammate (somebody of the same jersey as player)\nReferee\nPlayer (one who has the ball or the guy in closeup. Can be from different team in different snippets)\nStats (Some text displayed on screen while match is being shown)",
+			"keywords": ["Goalkeeper", "Player", "Teammate", "Opposition", "Referee", "Stats"],
+			"ratings": [4, 1, 1, 1, 4, 1],
+			"category_desc": "Who all are the main people/thing being shown in this snippet.\nDo not select any if no one significant.\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+		},
+		"Action": {
+			"keywords_desc": "Shoot (attempt to goal)\nDribble (carrying the ball or dodging for reasonable amount of time and space)\nPass (Player kicking the ball to teammate)\nClear (kicking the ball somewhere else inside the field)\nSteal (opposition snatching the ball from the player)\nGoalkeeperKickThrow (Goalkeeper kicking or throwing the ball)",
+			"keywords": ["Shoot", "Dribble", "Steal", "Pass", "Clear", "GoalkeeperKickThrow"],
+			"ratings": [8, 1, 2, 1, 1, 3],
+			"category_desc": "What is being done with the ball in THIS snippet?\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+		},
+		"Outcome": {
+			"keywords_desc": "In Field (ball is somewhere in the field)\nGoal (ball went into the goal)\nRed Card (referee showing the red card)\nPole (ball hit the pole - it may be a goal or a miss - select them separately as applicable)\nOutside (ball went out of the field markings)\nPlayer Fell (this snippet shows a prayer falling and gettnig up quickly)\nOff Side (Ball is passed to a player who is behind the farthest defender of the opposition)\nYellow card (referee showing the yellow card)\nFoul (something happened because of which match seems to pause and then resume)\nMiss (ball missed the goal)\nInjured (Somebody got injured, match pauses and resumes)\nSave (goalkeeper successfully saved a goal attempt)",
+			"keywords": ["Outside", "Goal", "Miss", "Pole", "Save", "Foul", "Yellow Card", "Red Card", "Injured", "Off Side", "In Field", "Player Fell"],
+			"ratings": [4, 10, 8, 8, 10, 5, 4, 8, 7, 10, 1, 2],
+			"category_desc": "What actually happened with the ball as a result of 'Action'.\nTo be used only when the snippet is showing the match in action.\nCan be more than 1 in a snippet."
+		},
+		"Event": {
+			"keywords_desc": "Throw (Throwing in ball from outside the edges of the field)\nKick off (Starting of the match from half line)\nCorner (A kick from any vertex corner of the field)\nCelebration (Players going crazy after a goal)\nFree Kick (A free chance to kick without anybody trying to steal the ball from the referee decided position of the ball)\nPenalty (Player, goal keeper and direct shoot by the player)\nHalf time (45:00 minute)\nPlayer Substitution (If this snippet shows the substitution board being flashed)",
+			"keywords": ["Penalty", "Free Kick", "Corner", "Throw", "Kick Off", "Half Time", "Celebration", "Player Substitution"],
+			"ratings": [10, 4, 5, 1, 8, 8, 6, 5],
+			"category_desc": "Typically a consequence of the 'outcome'.\nIt is a major checkpoint from match perspective.\nSnippets that show the beginning/resume of the game or celebration will typically have this.\nTo be used only when the snippet is showing the match in action.\nCan be atmost 1 per snippet."
+		},
+		"Position": {
+			"keywords_desc": "Mid Field (All areas except the D area and Half line can be termed as Midfield)\nD Area (if the ball is anywhere behind the D-Line towards the goal post)\nHalf line (if the ball is somewhere around the line in the middle of the field)",
+			"keywords": ["Mid Field", "D Area", "Half Line"],
+			"ratings": [1, 2, 1],
+			"category_desc": "In this snippet, where is the ball shown with respect to the field?\nIf the ball is going from one area to another in the same snippet, tick more than one.\nTo be used only when the snippet is showing the match in action."
+		},
+		"Camera Angle": {
+			"keywords_desc": "Close up (showing closeup of a something or someone)\nLow Angle (as if somebody on the ground is taking the video)\nHigh angle (like view from drone/crane mounted cameras - mostly all views are this)",
+			"keywords": ["Close Up", "High Angle", "Low Angle"],
+			"ratings": [2, 1, 1],
+			"category_desc": "Applicable to both in match snippet or other snippet.\nIf more than one in the same snippet, select all applicable."
+		},
+		"Other Scenes": {
+			"keywords_desc": "Player/Match Statistics (screen showing info, numbers and stats)\nHighlight/Replay (replay/highlight being shown)\nVideo Assistant Referee (like a screen showing replay or something for tougher decisions)\nPost Match Celebration\nTeam room (player discussions)\nSpectators (scene of the audience or cheerleaders)\nOther Background (like sky, landscape, city view, animation, advertisement etc.)\nPost Match celebration (if the snippet shows celebration after the match is over)\nPre Match Event (something happening on field before the match has begun)\nTeam walk in (team entering the ground)",
+			"keywords": ["Statistics", "Team Walk In", "Team Room", "Player/Match Statistics", "Spectators", "Highlight/Replay", "Other Background", "Post Match Celebration", "Video Assistant Referee", "Pre Match Event"],
+			"ratings": [2, 2, 2, 2, 2, 0, 0, 2, 2, 1],
+			"category_desc": "The snippet shows something other than the match action on field.\nWhen this is selected, entity, action, outcome, event and position must be blanks."
+		}
+	}
+}

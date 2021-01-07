@@ -1,0 +1,44 @@
+{
+	"mega_events": ["exchange-gifts-bouquet", "cake-cutting", "cake-feeding", "ritual", "lighting-candle", "something-interesting"],
+	"mega_events_ratings": [6, 10, 8, 8, 10, 10],
+	"snippet_size": 5,
+	"categories": {
+		"NumPeople": {
+			"keywords_desc": "0 (When no person or only partial persons, that is no face and less than 50% visible)",
+			"keywords": ["0", "1", "2", "3-5", ">5"],
+			"ratings": [1, 1, 1, 1, 1],
+			"category_desc": "Max number of people seen in this shot at any point in time\nCount only if either face or more than 50% of person is visible"
+		},
+		"Actors": {
+			"keywords_desc": "birthday-person(birthday boy or girl)\nmedia(anybody from media)\nwaiter(somebody in uniform seen serving guests)\nanchor(magician/performer/announcer/master of ceremonies/compere)\ncartoon-character(somebody wearing cartoon costume)",
+			"keywords": ["birthday-person", "guest", "media", "waiter", "anchor", "food-stall-person", "activity-stall-person", "birthday-poster", "camera-man", "cartoon-character", "any-other-banner", "cake", "decoration", "gifts", "venue", "food", "other-object", "title-animation"],
+			"ratings": [2, 1, 3, 1, 4, 1, 1, 5, 1, 8, 2, 7, 2, 3, 1, 1, 1, 8],
+			"category_desc": "Who all are visible in this shot?\nFor living beings, mark whoever are visible\nFor non living beings, mark only if the object is in closeup and in focus)"
+		},
+		"Event": {
+			"keywords_desc": "greeting(Gestures while welcoming or meeting each other.\nIncludes shake hand, touch feet, bow down etc.)\nair-show(includes releasing balloons in air or bursting fire crackers)",
+			"keywords": ["dance", "selfie", "group-photo-pose", "individual-pose", "guests-entry", "birthday-person-entry", "exchange-gifts-bouquet", "playing-games", "misc-activities", "hugging", "kissing", "greeting", "interview", "cake-cutting", "blowing-candle", "eating-drinking", "clapping", "cake-feeding", "dressing-makeup", "ritual", "sleeping", "lighting-candle", "air-show", "magic-show", "something-interesting"],
+			"ratings": [6, 4, 7, 5, 3, 10, 6, 3, 3, 4, 8, 4, 2, 10, 10, 2, 2, 8, 6, 8, 2, 10, 10, 8, 10],
+			"category_desc": "What is the main thing happening in the scene?\nTypically action in the center or in the foreground\nLeave blank if none of this is applicable or if implicit from some other keyword"
+		},
+		"Location": {
+			"keywords_desc": "banquet-hall(includes party hall, pub, discotheque etc.)",
+			"keywords": ["banquet-hall", "dining-area", "outdoor", "stage", "room", "parlour-salon", "mall"],
+			"ratings": [1, 1, 1, 2, 1, 2, 1],
+			"category_desc": "Location of this shot\nDo not select if it is not clear"
+		},
+
+		"SceneType": {
+			"keywords_desc": "animation-graphics(animation added by the video editor)\nstill-photo(inserted in the video by the video editor)\nblank-fade(when screen fades or blacks out upon change of scene)",
+			"keywords": ["animation-graphics", "still-photo", "blank-fade"],
+			"ratings": [1, 5, 0],
+			"category_desc": "What kindo f scene is this?\nRegular birthday scene is by default."
+		},
+		"CameraAngle": {
+			"keywords_desc": "closeup(when the thing/person being show is quite large relative to the entire frame)\nwide-angle(every other shot)",
+			"keywords": ["closeup", "wide-angle"],
+			"ratings": [1, 1],
+			"category_desc": "What kind of scene is this?\nRegular birthday scene is by default."
+		}
+	}
+}

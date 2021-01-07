@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0;  user-scalable=0;" name="viewport">
+  <meta name="description" content="Visiocity">
+  <meta name="keywords" content="Visiocity, video summarization, benchmark, dataset, automatic evaluation, challenges">
+  <meta name="author" content="Vishal Kaushal">
+
+  <title>VISIOCITY</title>
+
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script>
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [
+          ['$', '$'],
+          ['\\(', '\\)']
+        ]
+      }
+    });
+  </script>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]
+
+    FROM CSS img.featurette-image {
+      border-radius: 3px;
+      border: solid 1px #bbb;
+    }
+  -->
+</head>
+
+<body width="device-width">
+
+
+  <nav style="font-size:1.3em;" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" href="#overview">Overview</a>
+          <a class="nav-item nav-link active" href="#videos">Videos</a>
+          <a class="nav-item nav-link active" href="#annotation">Annotation</a>
+          <a class="nav-item nav-link active" href="#gtsum">Ground Truth Summaries</a>
+          <a class="nav-item nav-link active" href="#eval">Evaluation</a>
+          <a class="nav-item nav-link active" href="#downloads">Downloads</a>
+          <a class="nav-item nav-link active" href="#benchmark">Benchmark</a>
+          <a class="nav-item nav-link active" href="#cite">Cite</a>
+        </div>
+      </div>
+  </nav>
+
+  <div class="container-fluid p-0 m-0">
+    <div class="header visiocityheader"></div>
+  </div>
+
+  <div class="container">
+    <div class="header-text"> <br> <br>
+      <h1 class="page-title center-container">VISIOCITY</h1>
+    </div>
+    <p class="lead center-container">A New
+      Benchmark and Evaluation Framework</p>
+  </div>
+
+
+  <div id="overview" class="container">
+    <h2 class="page-header">Overview</h2>
+    <p> Automatic video summarization is still an unsolved problem due to several challenges. Lack of a <b>challenging
+        dataset</b> and a <b>rich automatic evaluation framework</b> are the two issues often talked about in
+      literature. We
+      introduce a new benchmarking video dataset called VISIOCITY <b>(VIdeo SummarIzatiOn based on Continuity, Intent
+        and
+        DiversiTY)</b>. While currently available datasets either have very short videos or have few long videos of only
+      a
+      particular type (Table 1), VISIOCITY is a <b>diverse collection of 67 long videos spanning across six different
+        categories with dense concept annotations</b> (Table 2). Due to its rich annotations, it supports different
+      flavors of
+      video summarization and other vision problems like captioning as well.
+      <br> <br>
+      <div class="row">
+        <div class="righthalfcolumn img-with-text resize"><img src="assets/comparison.png"
+            alt="VISIOCITY compared with other datasets" width=700 />
+          <p class="center-container"><b>Table 1: Comparison with other datasets</b></p>
+        </div>
+        <div class="lefthalfcolumn img-with-text resize"><img src="assets/summary.png" alt="VISIOCITY Key Stats"
+            width=370 />
+          <p class="center-container"><b>Table 2: VISIOCITY Stats</b></p>
+        </div>
+      </div>
+      <div class="row">
+      </div>
+  </div>
+
+  <div id="videos" class="container">
+    <h2 class="page-header">Videos</h2>
+    <p> VISIOCITY contains publicly available Soccer, Friends, Techtalk, Birthday and Wedding videos downloaded from the
+      internet.
+      <ul>
+        <li><b>TV shows</b> contains videos from a popular TV series Friends. They are typically more aesthetic in
+          nature
+          and professionally shot and edited.</li>
+        <li>In <b>sports</b> category, VISIOCITY contains Soccer videos. These videos
+          typically
+          have well defined events of interest like goals or penalty kicks and are very similar to each other in terms
+          of
+          the visual features.</li>
+        <li>Under <b>surveillance</b> category, VISIOCITY covers diverse settings like indoor, outdoor,
+          classroom, office and lobby. The videos were recorded using our own surveillance cameras. These videos are in
+          general very long and are mostly from static continuously recording cameras.</li>
+        <li>Under <b>educational</b> category,
+          VISIOCITY
+          has tech talk videos with static views or inset views or dynamic views.</li>
+        <li>In personal videos category, VISIOCITY has
+          <b>birthday</b> and <b>wedding</b> videos. These videos are typically long and unedited.</li>
+      </ul>
+      <p> A sample video from
+        each category is
+        shown below.
+        <div class="center-container">
+
+          <iframe src="https://drive.google.com/file/d/1e6QUZvHdZw44Y0oH73h1b2sBdhbYSXFb/preview" width="320"
+            height="240" title="soccer_18"></iframe>
+
+          <iframe src="https://drive.google.com/file/d/1jeqsFEG5msnTWozAXuemHcF_n1mUP0og/preview" width="320"
+            height="240" title="friends_1"></iframe>
+
+          <iframe src="https://drive.google.com/file/d/119JDos70WFP3XEcajspPEkj2SlYLaFUS/preview" width="320"
+            height="240" title="surveillance_8"></iframe>
+        </div>
+        <div class="center-container">
+
+          <iframe src="https://drive.google.com/file/d/1_udE6vvGKkMTIwSyBGNvsnKX40b8IraH/preview" width="320"
+            height="240" title="techtalk_4"></iframe>
+
+          <iframe src="https://drive.google.com/file/d/152XfRt-lIb1W7WEBfMF80p8vlqbp58jm/preview" width="320"
+            height="240" title="birthday_10"></iframe>
+
+          <iframe src="https://drive.google.com/file/d/1X4-THuMy0qxlk1a54UdaQ92Rbx47-sPf/preview" width="320"
+            height="240" title="wedding_5"></iframe>
+        </div>
+  </div>
+  <p class="center-container"><b>Figure 1: Clockwise from the top left : soccer_18, friends_1, surveillance_8,
+      wedding_5,
+      birthday_10, techtalk_4</b></p>
+  <!--div class="center-container">Clockwise from the top left : soccer_18, friends_1, surveillance_8, wedding_5,
+    birthday_10, techtalk_4</div-->
+
+  <div id="annotation" class="container">
+    <h2 class="page-header">Annotations for Supervised Learning and Evaluation</h2>
+
+    <ul>
+      <li><b>Indirect ground truth</b></li>
+      <ul>
+        <li>Concepts marked for each shot</li>
+        <li>Allows to "generate" different ground truth summaries required for supervised learning</li>
+        <li>Makes annotation process more objective and easier as compared to asking annotators to provide reference
+          summaries directly or ratings or scores which becomes very difficult for long videos</li>
+      </ul>
+      <li>Concepts</li>
+      <ul>
+        <li>Carefully selected based on the type of video</li>
+        <li>Organized in <b>categories</b> rather than a flat list</li>
+        <li>Example categories include ’actor’, ’entity’, ’action’, ’scene’,
+          ’number-of-people’, etc.</li>
+        <li>Categories provide a natural structuring
+          to make the annotation process easier and also support for at least
+          one level hierarchy of concepts for concept-driven summarization.</li>
+      </ul>
+      <li><b>Mega events</b></li>
+      <ul>
+        <li>To mark consecutive shots which together
+          constitute a cohesive event</li>
+        <li>For example, a few shots preceeding a goal in a soccer video, the goal shot and a few shots after the goal
+          shot together would constitute a 'mega-event'</li>
+        <li>A model trained to learn importance scores
+          (only) would do well to pick up the ’goal’ snippet. However, such a
+          summary will not be pleasing. The notion of 'mega-events' allows for modeling <b>continuity</b>.(Figure 5)
+        </li>
+      </ul>
+      <li>Protocol</li>
+      <ul>
+        <li>13 professional annotators</li>
+        <li>Audio turned off</li>
+        <li>GUI tool to make the process easy and error free (Figure 2)</li>
+      </ul>
+      <li><b>Gold standard</b></li>
+      <ul>
+        <li>Guidelines and protocols were made as objective as
+          possible</li>
+        <li>Annotators were trained through sample annotation
+          tasks </li>
+        <li>Annotation round was followed by two verification
+          rounds where both precision (how accurate the annotations were)
+          and recall (whether all events of interest and continuity information
+          has been captured in the annotations) were verified by another set
+          of annotators</li>
+        <li>Whatever inconsistencies or inaccuracies were found
+          and could be automatically detected, were included in our automatic
+          sanity checks which were run on all annotations</li>
+      </ul>
+    </ul>
+
+    <div class="img-with-text"><img class="center-container resize" src="assets/tool_masked.png" alt="Annotator tool"
+        width=500 />
+      <p class="center-container"><b>Figure 2: Annotation tool</b></p>
+    </div>
+  </div>
+
+  <div id="gtsum" class="container">
+    <h2 class="page-header">Ground Truth Summaries</h2>
+
+    Supervised automatic video-summarization techniques tend to work better than unsupervised techniques because of
+    learning directly from human summaries. However, since there is <b>no single 'right' answer</b> (due to reasons
+    highlighted in Figure 3), two human summaries could be quite different in their selections. For example, as shown in
+    Figure 4, for soccer_18 video the peaks correspond
+    to those seconds which got selected in summary by many humans. Yet there are many seconds which have been selected
+    by only one human.
+
+    <div class="row">
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="lefthalfcolumn img-with-text resize"><img src="assets/motivation.png" alt="No single right answer"
+          width=400 />
+        <p class="center-container"><b>Figure 3: There can be many "right answers" or ideal summaries</b></p>
+      </div>
+      <div class="righthalfcolumn img-with-text resize"><img src="assets/consistency.png"
+          alt="(In)consistency in human summaries" width=600 />
+        <p class="center-container"><b>Figure 4: Human selections for soccer_18 video show agreement as well as
+            dis-agreement; the two peaks (selections where most humans agree) correspond to the two goals in this
+            video</b></p>
+      </div>
+    </div>
+
+    <!--div class="img-with-text"><img class="center-container resize" src="assets/motivation.png"
+          alt="No single right answer" />
+        <p class="center-container"><b>Figure 3: There can be many "right answers" or ideal summaries</b></p>
+      </div>
+
+      <div class="img-with-text"><img class="center-container resize" src="assets/consistency.png"
+          alt="(In)consistency in human summaries" />
+        <p class="center-container"><b>Figure 4: Human selections for soccer_18 video show agreement as well as
+            dis-agreement; the two peaks (selections where most humans agree) correspond to the two goals in this
+            video</b></p>
+      </div-->
+
+    Thus, more the number of human summaries, better is the learning. Unfortunately, for long videos different human
+    summaries with diverse characteristics and of different lengths are difficult to obtain. In VISIOCITY we use pareto
+    optimality to automatically generate multiple reference summaries with different characteristics from indirect
+    ground truth present in VISIOCITY. For example, maximizing a particular scoring function would yield a summary rich in that particular charcateristic. However, it may fall-short on other characteristics (Figure 5). Hence <b>different weighted combinations of measures (each modeling
+      certain characteristic like diversity or continuity or importance) are maximized to arrive at optimal ground truth summaries</b>. We show that these summaries are at par with human summaries (Figure 6, 7).
+
+      <div class="center-container">
+
+          <iframe src="https://drive.google.com/file/d/1QwdzSWyYY_9YTMQ4nR8aGnZQTaRbaXy2/preview" width="320" height="240"></iframe>
+  
+          <iframe src="https://drive.google.com/file/d/1q38TT30EtDyqotuKujQapXj1GN5sSbmz/preview" width="320" height="240"></iframe>
+      </div>
+      <p class="center-container"><b>Figure 5: Automatic ground truth summary f soccer_18 produced by - (left) maximizing only importance score, (right) maximizing only mega-event continuity score</b></p>
+
+    <div class="center-container">
+
+        <iframe src="https://drive.google.com/file/d/19-UJRHxPg3hANrXC0-pADqlfwl9ZLGB-/preview" width="320" height="240"></iframe></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1IOAxSRW0eUIuYQDXzIBDV6VJrEQWA8Pc/preview" width="320" height="240"></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1PK7JPxRfKIknrRhUk55O97SpVe6_qZeZ/preview" width="320" height="240"></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1EvqQ2HWJtC4K75V2cDMHRd2pYgXM0gU9/preview" width="320" height="240"></iframe>
+      
+    </div>
+    <p class="center-container"><b>Figure 6: Some human summaries for a 23 mins friends video (friends_5)</b></p>
+
+    <div class="center-container">
+        <iframe src="https://drive.google.com/file/d/1PC5-NvBrscn3-ZISfATTQ7GZ_SSy2ds7/preview" width="320" height="240"></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1ITqt8DMhRqmOe7alaieZumMuE3Ol_lnN/preview" width="320" height="240"></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1Ya3S3t2ut-hlfM4UA7Zpp_Nfqd5XppKF/preview" width="320" height="240"></iframe>
+
+        <iframe src="https://drive.google.com/file/d/1rLaFawVSa9kcZG5jhQWF_ewU1w1mxjaD/preview" width="320" height="240"></iframe>
+      
+    </div>
+    <p class="center-container"><b>Figure 7: Some automatically generated reference summaries for same video</b>
+    </p>
+  </div>
+
+  <div id="eval" class="container">
+    <h2 class="page-header">Evaluation Framework</h2>
+
+    A video summary is <b>typically evaluated by comparing it against a human (reference) summary. This has following
+      limitations</b>:
+    <ul>
+      <li>Human summaries are themselves inconsistent with each other</li>
+      <li>A workaround is to report the max across many human summaries. This again falls short especially in context of
+        long videos. A good candidate may get a low score just because it was not fortunate to
+        have a matching human summary </li>
+      <li>Typical measure used is F1 which has its limitations. For example it is not made to measure aspects like
+        continuity and diversity</li>
+    </ul>
+    Further, a single measure (say F1) to evaluate a summary, as
+    is the current typical practice, falls short in some ways. One human (good) summary could contain more important but less diverse segments while another human (good) summary could contain more diverse and less imporant segments (Figure 8). In VISIOCITY <b>we thus use a suite of measures </b>(Figure 9) to capture various
+    aspects of a summary like continuity, diversity,
+    redundancy, importance etc. These are computed using the annotations provided in VISIOCITY (indirect ground
+    truth), as against comparing the candidate summary to ground truth summaries.
+    <!--div class="row">
+      <div class="img-with-text"><img class="center-container resize" src="assets/interplay.png"
+          alt="Interplay of different measures across different human summaries of friends_5" width=700 />
+        <p class="center-container"><b>Figure 7: Interplay of different measures across different human summaries of
+            friends_5</b></p>
+      </div>
+
+      <div class="img-with-text"><img class="center-container resize" src="assets/measures.png"
+          alt="Example of different measures modeling different desired characteristics in a summary" width=700 />
+        <p class="center-container"><b>Figure 8: Evaluation measures / scoring functions used in VISIOCITY</b></p>
+      </div>
+    </div-->
+    <br>
+
+    <div class="row">
+      <div class="lefthalfcolumn img-with-text resize"><img src="assets/interplay.png"
+          alt="Interplay of different measures across different human summaries of friends_5" width=150% />
+        <p class="center-container"><b>Figure 8: Interplay of different measures across different human summaries of
+            friends_5</b></p>
+      </div>
+      <div class="righthalfcolumn img-with-text resize"><img src="assets/measures.png"
+          alt="Example of different measures modeling different desired characteristics in a summary" width=400 />
+        <p class="center-container"><b>Figure 9: Evaluation measures / scoring functions used in VISIOCITY</b></p>
+      </div>
+    </div>
+
+    
+
+
+
+    <!--$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$-->
+  </div>
+
+
+
+  <div id="downloads" class="container">
+    <h2 class="page-header">Downloads</h2>
+
+    <h3>Videos</h3>
+    All videos of VISIOCITY can be downloaded from <a
+      href="https://drive.google.com/drive/folders/1vgTWSNNEFI3aHUyIUqA_jc1OZhVCZV3V?usp=sharing">here</a>
+    <br>
+    <br>
+    <h3>Annotations</h3>
+    The JSON files of all annotations for all videos and all categories can be downloaded from <a
+      href="https://drive.google.com/drive/folders/1d_j3icjw29R1umyHAT4Fj-JP2imy-WCt?usp=sharing">here</a>
+    <br>
+    <br>
+
+    <h3>Human Summaries</h3>
+    The human summary JSON files can be downloaded from <a
+      href="https://drive.google.com/drive/folders/1jixMBbI3T-NIT8GATt3rPvdXMg8Ge2mD?usp=sharing">here</a>
+    <br>
+    <br>
+    <h3>Code</h3>
+    The code can be downloaded from <a href="https://github.com/visiocity/visiocity.github.io">this git repository</a>
+    <br>
+    <b>Tool</b>
+    <ul>
+      <li>Pre-requisites: python3 and following python packages: tkinter, ffmpeg, opencv, pillow, imagetk, Pmw, bs4
+      </li>
+      <li>For annotation: <code>python tool.py soccer.json</code></li>
+      <li>As annotation viewer: <code>python tool.py soccer.json vis</code></li>
+      <li>Summary viewer: GUI tool to view a summary, given its JSON. For example: <br> <code>python3 summaryViewer.py
+          --video ~/data/soccer/soccer_1.mp4 --summary summary.json --annotation ~/data/soccer/soccer_1.json
+          --configfile soccer.json</code></li>
+    </ul>
+
+    <b>Evaluation</b>
+    <ul>
+      <li><code>GenerateFrameEvalNumbers.cc</code>: code to compute all scores of a summary based on the frames
+        contained in the
+        summary JSON</li>
+      <li><code>GenerateVisContUniformNumbers.cc</code>: code to compute the visual continuity score and uniformity
+        score of a
+        summary, given the summary JSON</li>
+      <li><code>GenerateAllEvalNumbers.cc</code>: code to compute all scores of a summary based on the snippets
+        contained in its
+        summary JSON</li>
+      <li><code>computeScoresOfHuman.py</code>: script to compute all scores of all human summaries given all human
+        summary JSONs.<br> For example: <code>python computeScoresOfHuman.py ~/data/ soccer build/ True 2>&1 | tee
+          soccerHumanScores.log</code></li>
+      <li><code>computeScoresOfRandom.py</code>: script to compute all scores of all random summaries given all random
+        summary JSONs
+      </li>
+      <li><code>GTSummaryGenerator.cc</code>: code to automatically generate ground truth summary given a configuration
+        of lambdas.<br></li>
+    </ul>
+
+    <b>Utils</b>
+    <ul>
+      <li><code>hsImageAndHistogram.py</code>:
+        Utility to create a video overlayed with all human summary selections for that video by all humans and to
+        produce other statistics of human summaries given the human summary JSONs. </li>
+      <li><code>summaryFramesToVideoGenerator.py</code>:
+        Utility to create human summary video given a human summary JSON</li>
+      <li><code>summarySnippetsToVideoGenerator.py</code>:
+        Utility to create a summary video given the snippets information in a summary JSON. <br> For example, <code>python2 summarySnippetsToVideoGenerator.py soccer_18_imp_mega.json soccer_18.json soccer.json soccer_18.mp4 soccer_18_imp_mega.mp4</code></li>
+      <li><code>generateAllHumanSummaryVideos.py</code>: to generate human summary videos for all videos using all human
+        summary
+        JSONs</li>
+      <li><code>randomSummaryGenerator.py</code>: code to generate random summaries</li>
+    </ul>
+  </div>
+
+  <div id="benchmark" class="container">
+    <h2 class="page-header">Benchmark</h2>
+    VISIOCITY can serve as a <b>challenging benchmark dataset</b>. We test the performance of a few representative
+    state-of-the-art techniques of video summarization on VISIOCITY assessed using various measures. <b>We also leverage
+      VISIOCITY to demonstrate that with multiple ground truth summaries possessing different characteristics, learning
+      from a single oracle combined ground truth summary (as is a common practice) using a single loss function is not a
+      good idea</b>. A simple recipe VISIOCITY-SUM (called "Ours" in Figure 10) uses a simple weighted mixture model and
+    learns the weights using individual ground truth summaries and a combination of losses (each measuring deviation
+    from a different characteristic) outperforms the other techniques.
+    <div class="img-with-text"><img src="./assets/results.png" />
+      <p class="center-container"><b>Figure 10: Results using mixture model on VISIOCITY</b></p>
+    </div>
+  </div>
+
+
+  <div id="cite" class="container">
+    <h2 class="page-header">Cite</h2>
+    If you use VISIOCITY or refer to it, please cite the following paper:
+    <div class="code">
+      <pre>
+      <code>
+        @inproceedings{
+          kaushal2020realistic, 
+          title={Realistic Video Summarization through VISIOCITY: A New Benchmark and Evaluation Framework}, 
+          author={Kaushal, Vishal and Kothawade, Suraj and Iyer, Rishabh and Ramakrishnan, Ganesh}, 
+          booktitle={Proceedings of the 2nd International Workshop on AI for Smart TV Content Production, Access and Delivery}, 
+          pages={37--44}, 
+          year={2020}
+        }
+      </code>
+    </pre>
+    </div>
+    <br>
+    <b>For any communiction regarding VISIOCITY, please contact</b>: Vishal Kaushal [vkaushal at cse dot iitb dot ac dot
+    in]
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col-8">
+          <p class="text-muted">Department of Computer Science and Engineering, Indian Institute of Technology
+            Bombay<br>
+            Mumbai, Maharastra, India</p>
+          <br>
+          <br>
+        </div>
+        <div class="col-4">
+          <img src="assets/iitblogo.png" width=50 align="right" />
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <br>
+  <br>
+  <br>
+
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+
+  <!--  <script src="js/collapse.js"></script>
+        <script language="javascript">
+            $(document).ready(function() {
+            $(".comment").shorten();
+            $(".comment-small").shorten({showChars: 10});
+            });
+        </script>-->
+</body>
+
+</html>

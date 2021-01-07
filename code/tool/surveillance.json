@@ -1,0 +1,43 @@
+{
+	"mega_events": ["Entry", "Exit", "Falling", "Climbing", "Running", "Object In", "Object Out", "Object Tamper", "Throwing", "Camera Tampering", "Suspicious Behavior"],
+	"mega_events_ratings": [6, 4, 10, 10, 10, 8, 8, 8, 8, 10, 10],
+	"snippet_size": 2,
+	"categories": {
+		"Entities": {
+			"keywords_desc": "",
+			"keywords": ["Animal", "Vehicle"],
+			"ratings": [1, 1],
+			"category_desc": "Who all are visible in the scene?\nPerson need not be marked as it is captured through NumPeople"
+		},
+		"NumPeople": {
+			"keywords_desc": "",
+			"keywords": ["0", "1", "2", "3-5", ">5"],
+			"ratings": [0, 1, 1, 1, 1],
+			"category_desc": "Max number of people in this snippet at any one time instant"
+		},
+		"Action": {
+			"keywords_desc": "Entry (Somebody coming in scene)\nExit (Somebody going out of scene)\nStanding (Somebody standing throughout)\nSitting (Somebody sitting throughout)\nFalling (Somebody falling down or collapsing)\nFighting (Physical)\nObject In (Somebody bringing some object in the scene)\nObject Out (Somebody taking some object out of the scene)\nSit Down (Somebody was standing and now sits down)\nStand Up (Somebody was sitting and now stands up)\nObject Tamper (Somebody Handling/Tampering/Fiddling/Moving some object in scene)\nShouting (Shouting or Getting Angry on someone)\nQuarreling (Quarreling or Arguing)\nGive Take (Giving or Taking Something)\nWorking Computer (Working on Computer)\nWorking Mobile (Working on Mobile)",
+			"keywords": ["Entry", "Exit", "Standing", "Sitting", "Explaining", "Listening", "Walking", "Talking", "Falling", "Climbing", "Running", "Object In", "Object Out", "Sit Down", "Stand Up", "Object Tamper", "Shouting", "Quarreling", "Throwing", "Give Take", "Writing", "Working Computer", "Working Mobile", "Sleeping", "Laughing", "Drinking", "Eating", "Phone Talking"],
+			"ratings": [7, 5, 1, 1, 2, 1, 1, 1, 10, 10, 10, 6, 6, 4, 6, 8, 8, 10, 8, 4, 1, 1, 1, 2, 1, 1, 1, 1],
+			"category_desc": "What are people doing in this snippeti?\nIf there are a lot of people then do NOT mark common day-to-day actions of every individual"
+		},
+		"Noticeworthy": {
+			"keywords_desc": "",
+			"keywords": ["Noticeworthy"],
+			"ratings": [10],
+			"category_desc": "Not abnormal but something noticeworthy to be included in summary\nFor example everybody else is doing something, but one or two are doing something else or jumping the queue or standing up in the class etc.\nSelect in addition to action if applicable"
+		},
+		"Abnormal": {
+			"keywords_desc": "Suspicious Behavior (Any suspicious behavior)\nFighting (Physical)\nWeapon (Presence of Weapon or Harmful Object)\nCamera Tampering (Doing something in camera, whether intentional or unintentional)",
+			"keywords": ["Suspicious Behavior", "Fighting", "Weapon", "Camera Tampering", "Masked"],
+			"ratings": [10, 10, 10, 10, 10],
+			"category_desc": "Select any abnormal activities seen in this snippet"
+		},
+		"SceneType": {
+			"keywords_desc": "Night (If it is clear that the camera is operating in night vision mode)\nRain (Any weather condition which creates disturbance or low visibilityi, typically in outdoor cameras)\nCorrupt (When there is encoding/decoding error due to which people or objects are getting distorted",
+			"keywords": ["Night", "Rain", "Corrupt"],
+			"ratings": [1, 1, 0],
+			"category_desc": "Select an appropriate scene type. Do not select if it is day or normal"
+		}
+	}
+}

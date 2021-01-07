@@ -1,0 +1,31 @@
+{
+	"mega_events": [""],
+	"mega_events_ratings": [],
+	"snippet_size": 2,
+	"categories": {
+		"phase": {
+			"keywords_desc": "pre-talk (Actual talk not yet started. Introduction to topic or speaker is going on)\ntalk (main talk is going on)\npost-talk (Main talk is over. Thanks or Q/A is going on.)",
+			"keywords": ["pre-talk", "talk", "post-talk"],
+			"ratings": [1, 1, 1],
+			"category_desc": "Which phase of the entire video this snippet belongs to? Only one can be marked."
+		},
+		"content": {
+			"keywords_desc": "animated-intro (Typically before the talk)\ndais (when the angle is such that the stage / table chair etc. are visible)\nspeaker (when speaker is visible)\naudience (when audience is visible)\ntalk-title (title slide of the talk, typically the first one and any other slide which is exactly same as the first one)\nbreak-slide (special slide shown during break)\n slide(when a regular slide is clearly visible)",
+			"keywords": ["animated-intro", "dais", "anchor", "speaker", "speaker_2", "audience", "talk-title", "break-slide", "slide", "felicitation", "blank"],
+			"ratings": [0, 1, 4, 1, 1, 4, 10, 6, 1, 10, 0],
+			"category_desc": "What is being shown?"
+		},
+		"num-people": {
+			"keywords_desc": "",
+			"keywords": ["0", "1", "2", "3", ">3"],
+			"ratings": [0, 1, 1, 1, 1],
+			"category_desc": "How many people are being shown?"
+		},
+		"camera-angle": {
+			"keywords_desc": "close-up (when a person is being shown above the waist)\ninset (when slide and other view are being shown in the same frame)",
+			"keywords": ["close-up", "wide-angle", "inset"],
+			"ratings": [1, 1, 1],
+			"category_desc": "What is the camera angle in the scene?"
+		}
+	}
+}

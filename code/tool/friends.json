@@ -1,0 +1,55 @@
+{
+	"mega_events": ["Something Interesting", "Celebration"],
+	"mega_events_ratings": [10, 8],
+	"snippet_size": 5,
+	"categories": {
+		"Main Entities": {
+			"keywords_desc": "",
+			"keywords": ["Racheal Green", "Joey Tribianni", "Phoebe Buffay", "Ross Geller", "Monica Geller", "Chandler Bing", "Marcel (Monkey)", "Some other person", "Animal", "Text Overlay During Intro", "Text Overlay During Episode", "Monument", "TVScene"],
+			"ratings": [1, 1, 1, 1, 1, 1, 4, 1, 4, 0, 1, 1, 4],
+			"category_desc": "Who/What is in focus?\nMain character(s) clearly visible in foreground and has main focus.\nCan be more than one"
+		},
+		"Location": {
+			"keywords_desc": "",
+			"keywords": ["Outdoors", "Hospital", "Restaurant", "Kitchen", "Bedroom", "Living room", "Cafe", "Massage room", "Balcony", "Lobby", "Washroom", "Office", "Laundry", "Airport", "Studio", "Car", "Hotel", "School", "Jewellery Shop", "Auditorium", "Other"],
+			"ratings": [1, 2, 1, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 4],
+			"category_desc": "Where is this scene taking place?"
+		},
+		"Action": {
+			"keywords_desc": "Fighting (physical)\nArguing (more intense/serious expressions while talking and both entities are actively involved)\nLaughing (loud and explicit laughing)\nChuckling (laugh quietly or inwardly)\nListening (select only when this is the only action in this shot by the main entities)\nDressing Up (Wearing dress or coat or shoes etc.)",
+			"keywords": ["Talking", "Fighting", "Running", "Arguing", "Crying", "Dancing", "Screaming", "Whistling", "Hugging", "Reading", "Watching", "Eating", "Singing", "Playing", "Mimicking", "Falling", "Kissing", "Laughing", "Chuckling", "Frowning", "Listening", "Walking", "Dressing Up", "Serving", "Cooking", "Repairing", "Drinking", "Showing", "Writing", "Sleeping", "Jumping", "Throwing", "Funny", "Entering"],
+			"ratings": [1, 10, 8, 3, 6, 6, 2, 1, 6, 1, 1, 1, 4, 4, 1, 10, 8, 2, 1, 1, 1, 1, 7, 2, 2, 4, 1, 6, 1, 4, 10, 8, 10, 5],
+			"category_desc": "What is the main action / interaction?\nWhat is this person doing or what are these two people doing?\nCan be more than one"
+		},
+		"Emotion": {
+			"keywords_desc": "Serious (Whenever a serious conversation is going on)",
+			"keywords": ["Happy", "Sad", "Fear", "Anger", "Disgust", "Surprise", "Denial/Disapproval", "Serious", "Confused", "Blank"],
+			"ratings": [2, 3, 4, 4, 4, 2, 4, 1, 2, 1],
+			"category_desc": "Emotion evident from the face of the main character(s) seen\nEmotion is expressed through action\nSelect ONLY if the emotion is VERY clear and EXPLICIT\nIf nothing particular and it is neutral emotion, do not select any emotion\nCan be more than one if needed"
+		},
+		"Main Object": {
+			"keywords_desc": "",
+			"keywords": ["Book", "TV", "Guitar", "Phone", "Newspaper", "Refrigerator", "Flower Vase", "Game", "Egg", "Cab", "Photo", "Document", "Fruit", "Other"],
+			"ratings": [3, 1, 3, 1, 3, 1, 3, 3, 3, 3, 3, 3, 3, 4],
+			"category_desc": "Main object of interaction between two people\nNot just holding, but some significant action associated with that object\nObject becomes the main thing in focus for some time"
+		},
+		"Camera Angle": {
+			"keywords_desc": "Close (Face closeup where face is quite large, typically only one face)\nWide angle (All other angles)\nTransit Scene (Scene depicting change of location",
+			"keywords": ["Close", "Wide Angle", "Transit Scene"],
+			"ratings": [1, 1, 0],
+			"category_desc": "How is the camera positioned?\nCan be more than one"
+		},
+		"NumPeople": {
+			"keywords_desc": "",
+			"keywords": ["1", "2", "2-5", ">5"],
+			"ratings": [1, 1, 1, 1],
+			"category_desc": "Max number of people being shown at any time in this shot\nCount even if partially visible\nDo not count same person more than once in a shot\nIt is NOT the total number of people seen throughout the shot\nIt is the max seen at any given time"
+		},
+		"SceneType": {
+			"keywords_desc": "",
+			"keywords": ["Intro with text overlay", "Intro without text overlay"],
+			"ratings": [0, 0],
+			"category_desc": "If this is a shot which shows the intro clip, does it have text overlay in or not?\nNot selecting any keyword here means default scene type of normal episode"
+		}
+	}
+}
