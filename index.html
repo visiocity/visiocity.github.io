@@ -261,7 +261,7 @@
     summaries with diverse characteristics and of different lengths are difficult to obtain. In VISIOCITY we use pareto
     optimality to automatically generate multiple reference summaries with different characteristics from indirect
     ground truth present in VISIOCITY. For example, maximizing a particular scoring function would yield a summary rich in that particular charcateristic. However, it may fall-short on other characteristics (Figure 5). Hence <b>different weighted combinations of measures (each modeling
-      certain characteristic like diversity or continuity or importance) are maximized to arrive at optimal ground truth summaries</b>. We show that these summaries are at par with human summaries (Figure 6, 7).
+      certain characteristic like diversity or continuity or importance) are maximized to arrive at optimal ground truth summaries</b>. We show that these summaries are at par with human summaries (Figure 6, 7, 8).
 
       <div class="row center-container">
 
@@ -282,7 +282,7 @@
         <div class="quartercolumn resize"><iframe src="https://drive.google.com/file/d/1EvqQ2HWJtC4K75V2cDMHRd2pYgXM0gU9/preview" width="300" height="225"></iframe></div>
       
     </div>
-    <p class="center-container"><b>Figure 6: Some human summaries for a 23 mins friends video (friends_5)</b></p>
+    <p class="center-container"><b>Figure 6: Some human summaries (1, 2, 6, 7) for a 23 mins friends video (friends_5)</b></p>
 
     <div class="center-container row">
         <div class="quartercolumn resize"><iframe src="https://drive.google.com/file/d/1PC5-NvBrscn3-ZISfATTQ7GZ_SSy2ds7/preview" width="300" height="225"></iframe></div>
@@ -296,6 +296,18 @@
     </div>
     <p class="center-container"><b>Figure 7: Some automatically generated reference summaries for same video</b>
     </p>
+
+    <div class="row center-container">
+
+      <div class="halfcolumn resize"><img src="assets/someHuman.png"
+        alt="Selections by some human summaries of friends_5" width=400 /></div>
+
+      <div class="halfcolumn resize"><img src="assets/someAuto.png"
+        alt="Selections by some auto summaries of friends_5" width=400 /></div>
+    
+  </div>
+  <p class="center-container"><b>Figure 8: Shot numbers selected by human summaries (left) and by auto summaries (right) for the above summaries of friends_5 </b></p>
+
   </div>
 
   <div id="eval" class="container">
@@ -312,7 +324,7 @@
         continuity and diversity</li>
     </ul>
     Further, a single measure (say F1) to evaluate a summary, as
-    is the current typical practice, falls short in some ways. One human (good) summary could contain more important but less diverse segments while another human (good) summary could contain more diverse and less imporant segments (Figure 8). In VISIOCITY <b>we thus use a suite of measures </b>(Figure 9) to capture various
+    is the current typical practice, falls short in some ways. One human (good) summary could contain more important but less diverse segments while another human (good) summary could contain more diverse and less imporant segments (Figure 9). In VISIOCITY <b>we thus use a suite of measures </b>(Figure 10) to capture various
     aspects of a summary like continuity, diversity,
     redundancy, importance etc. These are computed using the annotations provided in VISIOCITY (indirect ground
     truth), as against comparing the candidate summary to ground truth summaries.
@@ -333,12 +345,12 @@
     <div class="row">
       <div class="lefthalfcolumn img-with-text resize"><img src="assets/interplay.png"
           alt="Interplay of different measures across different human summaries of friends_5" width=150% />
-        <p class="center-container"><b>Figure 8: Interplay of different measures across different human summaries of
+        <p class="center-container"><b>Figure 9: Interplay of different measures across different human summaries of
             friends_5</b></p>
       </div>
       <div class="righthalfcolumn img-with-text resize"><img src="assets/measures.png"
           alt="Example of different measures modeling different desired characteristics in a summary" width=400 />
-        <p class="center-container"><b>Figure 9: Evaluation measures / scoring functions used in VISIOCITY</b></p>
+        <p class="center-container"><b>Figure 10: Evaluation measures / scoring functions used in VISIOCITY</b></p>
       </div>
     </div>
 
@@ -427,11 +439,11 @@
     state-of-the-art techniques of video summarization on VISIOCITY assessed using various measures. <b>We also leverage
       VISIOCITY to demonstrate that with multiple ground truth summaries possessing different characteristics, learning
       from a single oracle combined ground truth summary (as is a common practice) using a single loss function is not a
-      good idea</b>. A simple recipe VISIOCITY-SUM (called "Ours" in Figure 10) uses a simple weighted mixture model and
+      good idea</b>. A simple recipe VISIOCITY-SUM (called "Ours" in Figure 11) uses a simple weighted mixture model and
     learns the weights using individual ground truth summaries and a combination of losses (each measuring deviation
     from a different characteristic) outperforms the other techniques.
     <div class="img-with-text"><img src="./assets/results.png" />
-      <p class="center-container"><b>Figure 10: Results using mixture model on VISIOCITY</b></p>
+      <p class="center-container"><b>Figure 11: Results using mixture model on VISIOCITY</b></p>
     </div>
   </div>
 
