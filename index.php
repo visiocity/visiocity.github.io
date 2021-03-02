@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+$message = "";
+if(isset($_POST['SubmitButton'])){ //check if form was submitted
+  $input = $_POST['inputText']; //get input text
+  $message = "Success! You entered: ".$input;
+}    
+?>
+
+<!-- <!DOCTYPE html> -->
 <html lang="en">
 
 <head>
@@ -25,6 +33,8 @@
       }
     });
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="action.js"></script>
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -39,7 +49,6 @@
 </head>
 
 <body width="device-width">
-
 
   <nav style="font-size:1.3em;" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
@@ -362,10 +371,9 @@
   </div>
 
 
-
   <div id="downloads" class="container">
     <h2 class="page-header">Downloads</h2>
-
+<!-- 
     <h3>Videos</h3>
     All videos of VISIOCITY can be downloaded from <a
       href="https://drive.google.com/drive/folders/1vgTWSNNEFI3aHUyIUqA_jc1OZhVCZV3V?usp=sharing">here</a>
@@ -379,7 +387,12 @@
 
     <h3>Human Summaries</h3>
     The human summary JSON files can be downloaded from <a
-      href="https://drive.google.com/drive/folders/1jixMBbI3T-NIT8GATt3rPvdXMg8Ge2mD?usp=sharing">here</a>
+      href="https://drive.google.com/drive/folders/1jixMBbI3T-NIT8GATt3rPvdXMg8Ge2mD?usp=sharing">here</a> -->
+  <?php Echo $message; ?>
+   <form action="" method="post">
+      <input type="text" name="inputText"/>
+      <input type="submit" name="SubmitButton"/>
+    </form>   
     <br>
     <br>
     <h3>Code</h3>
