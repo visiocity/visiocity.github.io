@@ -1,12 +1,4 @@
-<?php
-$message = "";
-if(isset($_POST['SubmitButton'])){ //check if form was submitted
-  $input = $_POST['inputText']; //get input text
-  $message = "Success! You entered: ".$input;
-}    
-?>
-
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -373,6 +365,7 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
 
   <div id="downloads" class="container">
     <h2 class="page-header">Downloads</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSssECV_FRuVhXgZT28T1UftAezMdqkMLhXDAv15d3H6-Wjw/viewform?embedded=true" width="640" height="811" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 <!-- 
     <h3>Videos</h3>
     All videos of VISIOCITY can be downloaded from <a
@@ -388,11 +381,6 @@ if(isset($_POST['SubmitButton'])){ //check if form was submitted
     <h3>Human Summaries</h3>
     The human summary JSON files can be downloaded from <a
       href="https://drive.google.com/drive/folders/1jixMBbI3T-NIT8GATt3rPvdXMg8Ge2mD?usp=sharing">here</a> -->
-  <?php Echo $message; ?>
-   <form action="" method="post">
-      <input type="text" name="inputText"/>
-      <input type="submit" name="SubmitButton"/>
-    </form>   
     <br>
     <br>
     <h3>Code</h3>
